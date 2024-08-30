@@ -1,0 +1,8 @@
+tasks.register('downloadModel', Download) {
+    // This model is custom made using Model Maker. A detailed guide can be found here:
+    src 'https://storage.googleapis.com/ai-edge/interpreter-samples/model_personalization/android/model.tflite'
+    dest project.ext.ASSET_DIR + '/model.tflite'
+    overwrite false
+}
+
+preBuild.dependsOn downloadModel
